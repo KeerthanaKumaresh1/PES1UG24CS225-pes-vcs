@@ -151,25 +151,25 @@ int object_read(const ObjectID *id, ObjectType *type_out,
     // 1. Build file path
     char path[512];
     object_path(id, path, sizeof(path));
-
+ 
     // 2. Open and read entire file
     FILE *f = fopen(path, "rb");
     if (!f) return -1;
-
+ 
     fseek(f, 0, SEEK_END);
     long file_size = ftell(f);
     fseek(f, 0, SEEK_SET);
-
+ 
     if (file_size <= 0) { fclose(f); return -1; }
-
+ 
     uint8_t *buf = malloc((size_t)file_size);
     if (!buf) { fclose(f); return -1; }
-
+ 
     if (fread(buf, 1, (size_t)file_size, f) != (size_t)file_size) {
         free(buf); fclose(f); return -1;
     }
     fclose(f);
-
+ 
     // 3. Verify integrity: recompute hash and compare to expected
     ObjectID computed;
     compute_hash(buf, (size_t)file_size, &computed);
@@ -177,28 +177,28 @@ int object_read(const ObjectID *id, ObjectType *type_out,
         free(buf);
         return -1; // corruption detected
     }
-
+ 
     // 4. Parse the header — find the '\0' separating header from data
     uint8_t *null_ptr = memchr(buf, '\0', (size_t)file_size);
     if (!null_ptr) { free(buf); return -1; }
-
+ 
     // 5. Parse type string from header (e.g., "blob 42")
     if      (strncmp((char *)buf, "blob",   4) == 0) *type_out = OBJ_BLOB;
     else if (strncmp((char *)buf, "tree",   4) == 0) *type_out = OBJ_TREE;
     else if (strncmp((char *)buf, "commit", 6) == 0) *type_out = OBJ_COMMIT;
     else { free(buf); return -1; }
-
+ 
     // 6. Extract data portion (everything after the '\0')
     size_t header_len = (size_t)(null_ptr - buf) + 1; // includes the '\0'
     size_t data_len = (size_t)file_size - header_len;
-
+ 
     uint8_t *data = malloc(data_len + 1); // +1 for safe null termination
     if (!data) { free(buf); return -1; }
     memcpy(data, buf + header_len, data_len);
     data[data_len] = '\0'; // safe sentinel
-
+ 
     free(buf);
-
+ 
     *data_out = data;
     *len_out  = data_len;
     return 0;
