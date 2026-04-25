@@ -141,4 +141,3 @@ int commit_create(const char *message, ObjectID *commit_id_out) {
     if (ret != 0) return -1;
     return head_update(commit_id_out);
 }
-
