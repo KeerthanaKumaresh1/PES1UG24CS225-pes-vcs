@@ -151,4 +151,3 @@ int index_add(Index *index, const char *path) {
     e->size      = (uint32_t)st.st_size;
     return index_save(index);
 }
-
