@@ -80,11 +80,11 @@ make test\_objects
 
 ### Screenshot 1A — `./test\_objects` passing
 
-!\[Screenshot 1A](1.png)
+!\[Screenshot 1A](https://raw.githubusercontent.com/KeerthanaKumaresh1/PES1UG24CS225-pes-vcs/main/1.png)
 
 ### Screenshot 1B — Sharded object directory structure
 
-!\[Screenshot 1B](2.png)
+!\[Screenshot 1B](https://raw.githubusercontent.com/KeerthanaKumaresh1/PES1UG24CS225-pes-vcs/main/2.png)
 
 \---
 
@@ -111,11 +111,11 @@ make test\_tree
 
 ### Screenshot 2A — `./test\_tree` passing
 
-!\[Screenshot 2A](3.png)
+!\[Screenshot 2A](https://raw.githubusercontent.com/KeerthanaKumaresh1/PES1UG24CS225-pes-vcs/main/3.png)
 
 ### Screenshot 2B — Raw binary tree object (xxd)
 
-!\[Screenshot 2B](4.png)
+!\[Screenshot 2B](https://raw.githubusercontent.com/KeerthanaKumaresh1/PES1UG24CS225-pes-vcs/main/4.png)
 
 \---
 
@@ -147,11 +147,11 @@ cat .pes/index
 
 ### Screenshot 3A — `pes init` → `pes add` → `pes status`
 
-!\[Screenshot 3A](5.png)
+!\[Screenshot 3A](https://raw.githubusercontent.com/KeerthanaKumaresh1/PES1UG24CS225-pes-vcs/main/5.png)
 
 ### Screenshot 3B — `cat .pes/index` showing text-format index
 
-!\[Screenshot 3B](6.png)
+!\[Screenshot 3B](https://raw.githubusercontent.com/KeerthanaKumaresh1/PES1UG24CS225-pes-vcs/main/6.png)
 
 \---
 
@@ -193,21 +193,21 @@ make test-integration
 
 ### Screenshot 4A — `pes log` showing three commits
 
-!\[Screenshot 4A](7.png)
+!\[Screenshot 4A](https://raw.githubusercontent.com/KeerthanaKumaresh1/PES1UG24CS225-pes-vcs/main/7.png)
 
 ### Screenshot 4B — `find .pes -type f | sort` showing object growth
 
-!\[Screenshot 4B](8.png)
+!\[Screenshot 4B](https://raw.githubusercontent.com/KeerthanaKumaresh1/PES1UG24CS225-pes-vcs/main/8.png)
 
 ### Screenshot 4C — `cat .pes/refs/heads/main` and `cat .pes/HEAD`
 
-!\[Screenshot 4C](9.png)
+!\[Screenshot 4C](https://raw.githubusercontent.com/KeerthanaKumaresh1/PES1UG24CS225-pes-vcs/main/9.png)
 
 ### Screenshot — Full integration test
 
-!\[Integration Test](10.png)
+!\[Integration Test](https://raw.githubusercontent.com/KeerthanaKumaresh1/PES1UG24CS225-pes-vcs/main/10.png)
 
-!\[Integration Test](11.png)
+!\[Integration Test](https://raw.githubusercontent.com/KeerthanaKumaresh1/PES1UG24CS225-pes-vcs/main/11.png)
 
 \---
 
