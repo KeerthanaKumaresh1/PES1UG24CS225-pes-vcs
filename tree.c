@@ -14,7 +14,7 @@ uint32_t get_file_mode(const char *path) {
 }
 
 int tree_parse(const void *data, size_t len, Tree *tree_out) {
-    
+    /* Each entry format: "<mode> <name>\0<32-byte-raw-hash>" */
     tree_out->count = 0;
     const unsigned char *ptr = (const unsigned char *)data;
     const unsigned char *end = ptr + len;
